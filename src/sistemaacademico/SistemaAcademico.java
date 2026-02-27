@@ -36,6 +36,7 @@ public class SistemaAcademico {
                 // ... resto de casos
                 case 0: System.out.println("Saliendo..."); break;
                 default: System.out.println("Opción no válida");
+            }
         }while(opcion != 0)
             // Aquí irás implementando los métodos de tu responsabilidad
     }
@@ -51,5 +52,26 @@ public class SistemaAcademico {
      // Esta línea funcionará cuando el Desarrollador 1 entregue su parte
      estudiantes.add(new Estudiante(codigo, nombre, apellido, edad, semestre));
      System.out.println("Estudiante registrado con éxito.");
-   }    
+    }
+    // Implementar listarEstudiantes() y buscarEstudiante() 
+    public static void listarEstudiantes() {
+     System.out.println("\n--- LISTA DE ESTUDIANTES ---");
+     if (estudiantes.isEmpty()) {
+        System.out.println("No hay estudiantes registrados.");
+     } else {
+        for (Estudiante e : estudiantes) {
+            System.out.println(e.toString());
+        }
+     }
+    }
+
+    //Metodo buscar estudiante
+    public static Estudiante buscarEstudiante(String codigo) {
+     for (Estudiante e : estudiantes) {
+        if (e.getCodigo().equals(codigo)) {
+            return e;
+        }
+     }
+     return null;
+    }
 }
