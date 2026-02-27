@@ -2,6 +2,7 @@
 package sistemaacademico;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SistemaAcademico {
     //Listas globales en memoria
@@ -38,4 +39,17 @@ public class SistemaAcademico {
         }while(opcion != 0)
             // Aquí irás implementando los métodos de tu responsabilidad
     }
+    public static void registrarEstudiante() {
+     System.out.println("\n--- REGISTRAR ESTUDIANTE ---");
+     System.out.print("Código: "); String codigo = sc.nextLine();
+     System.out.print("Nombre: "); String nombre = sc.nextLine();
+     System.out.print("Apellido: "); String apellido = sc.nextLine();
+     System.out.print("Edad: "); int edad = sc.nextInt();
+     System.out.print("Semestre: "); int semestre = sc.nextInt();
+     sc.nextLine(); // Limpiar buffer
+
+     // Esta línea funcionará cuando el Desarrollador 1 entregue su parte
+     estudiantes.add(new Estudiante(codigo, nombre, apellido, edad, semestre));
+     System.out.println("Estudiante registrado con éxito.");
+   }    
 }
