@@ -1,20 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package sistemaacademico;
 
-/**
- *
- * @author jos13
- */
-public class SistemaAcademico {
+import java.util.ArrayList;
 
-    /**
-     * @param args the command line arguments
-     */
+public class SistemaAcademico {
+    public String id;
+    public String nombres;
+    public ArrayList<String> estudiantes = new ArrayList<>();
+    public ArrayList<String> asignaturas = new ArrayList<>();
+    public ArrayList<Integer> notas = new ArrayList<>();
     public static void main(String[] args) {
-        // TODO code application logic here
     }
     
 }
