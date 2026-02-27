@@ -74,4 +74,25 @@ public class SistemaAcademico {
      }
      return null;
     }
+    
+    //actualizar estudiante
+    public static void actualizarEstudiante(){
+        System.out.print("Ingrese el código del estudiante a editar");
+        String cod = sc.nextLine();
+        
+        for (estudiante e : estudiantes){
+            if (e.getCodigo().equals(cod)){
+                System.out.print("Nuevo Nombre (actual: " + e.getNombre() + "): ");
+                e.setNombre(sc.nextLine());
+                System.out.print("Nuevo Apellido: ");
+                e.setApellido(sc.nextLine());
+                System.out.print("Nuevo Semestre: ");
+                e.setSemestre(sc.nextInt());
+                sc.nextLine(); // Limpiar buffer
+                System.out.println("Datos actualizados correctamente.");
+                return;
+            }
+        }
+        System.out.println("No se encontró un estudiante con ese código.");
+    }
 }
