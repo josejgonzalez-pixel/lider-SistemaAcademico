@@ -95,4 +95,18 @@ public class SistemaAcademico {
         }
         System.out.println("No se encontró un estudiante con ese código.");
     }
+    
+    //eliminar estudiante
+    public static void eliminarEstudiante(){
+        System.out.print("Ingrese el código del estudiante a eliminar: ");
+        String cod = sc.nextLine();
+        Estudiante e = buscarEstudiante(cod); //usamos el método buscar
+        
+        if (e != null) {
+            estudiantes.remove(e);
+            System.out.print("Estudiante eliminado exitosamente");
+        }else{
+            System.out.print("No se encontró el estudiante");
+        }
+    }
 }
