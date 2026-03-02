@@ -29,7 +29,7 @@ public class SistemaAcademico {
         do {
             System.out.println("\n===== SISTEMA ACADEMICO =====");
             System.out.println("1. Registrar asignatura");
-            System.out.println("2. Listar asignatura");
+            System.out.println("2. listar asignatura");
             System.out.println("3. Buscar asignatura ");
             System.out.println("4. Actualizar asignatura");
             System.out.println("5. Eliminar asignatura");
@@ -47,12 +47,12 @@ public class SistemaAcademico {
                     buscarAsignatura();
                 case 4 ->
                     actualizarAsignatura();
-                /*case 5 ->
-                    eliminarAsignatura();*/
+                case 5 ->
+                    eliminarAsignatura();
                 case 0 ->
                     System.out.println("Saliendo");
                 default ->
-                    System.out.println("Opcion invalida.");
+                    System.out.println("opcion invalida");
             }
         } while (opcion != 0);
 
@@ -69,7 +69,7 @@ public class SistemaAcademico {
         System.out.print("docente: ");
         String docente = sc.nextLine();
         asignaturas.add(new Asignatura(codigo, nombre, creditos, docente));
-        System.out.println("asignatura registrada.");
+        System.out.println("asignatura registrada");
     }
 
     private static class Asignatura {
@@ -103,7 +103,7 @@ public class SistemaAcademico {
 
     public static void listarAsignaturas() {
         if (asignaturas.isEmpty()) {
-            System.out.println("No hay asignaturas registradas.");
+            System.out.println("No hay asignaturas registradas");
         } else {
             asignaturas.forEach(System.out::println);
         }
@@ -123,7 +123,7 @@ public class SistemaAcademico {
         System.out.print("Ingrese codigo: ");
         String codigo = sc.nextLine();
         Asignatura a = buscarAsignatura(codigo);
-        System.out.println(a != null ? a : "asignatura no encontrada.");
+        System.out.println(a != null ? a : "asignatura no encontrada");
     }
     
     public static void actualizarAsignatura() { 
@@ -132,15 +132,27 @@ public class SistemaAcademico {
         Asignatura a = buscarAsignatura(codigo);
         if (a != null) { 
         System.out.print("nuevo nombre: ");
-        a.setNombre(sc.nextLine()); System.out.print("nuevos creditos: ");
+        a.setNombre(sc.nextLine());
+        System.out.print("nuevos creditos: ");
         a.setCreditos(sc.nextInt());
         sc.nextLine();
         System.out.print("nuevo docente: ");
 
         a.setDocente(sc.nextLine());
         System.out.println("Asignatura actualizada.");
-        } else { System.out.println("Asignatura no encontrada.");
+        } else { System.out.println("Asignatura no encontrada");
         } 
+    }
+   
+    public static void eliminarAsignatura() {
+        System.out.print("codigo: ");
+        String codigo = sc.nextLine();
+        boolean removed = asignaturas.removeIf(a -> a.getCodigo().equals(codigo));
+        if (removed) {
+            System.out.println("asignatura eliminada.");
+        } else {
+            System.out.println("asignatura no encontrada");
+        }
     }
 
 }
