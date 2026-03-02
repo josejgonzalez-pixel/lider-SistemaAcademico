@@ -45,9 +45,9 @@ public class SistemaAcademico {
                     listarAsignaturas();
                 case 3 ->
                     buscarAsignatura();
-                /*case 4 ->
+                case 4 ->
                     actualizarAsignatura();
-                case 5 ->
+                /*case 5 ->
                     eliminarAsignatura();*/
                 case 0 ->
                     System.out.println("Saliendo");
@@ -80,6 +80,25 @@ public class SistemaAcademico {
         private Object getCodigo() {
             throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
         }
+
+        public void setNombre() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public void setCreditos(int nextInt) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public void setDocente(String nextLine) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+        public void setNombre(String nextLine) {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+
+
+
     }
 
     public static void listarAsignaturas() {
@@ -105,6 +124,23 @@ public class SistemaAcademico {
         String codigo = sc.nextLine();
         Asignatura a = buscarAsignatura(codigo);
         System.out.println(a != null ? a : "asignatura no encontrada.");
+    }
+    
+    public static void actualizarAsignatura() { 
+        System.out.print("Codigo: "); 
+        String codigo = sc.nextLine();
+        Asignatura a = buscarAsignatura(codigo);
+        if (a != null) { 
+        System.out.print("nuevo nombre: ");
+        a.setNombre(sc.nextLine()); System.out.print("nuevos creditos: ");
+        a.setCreditos(sc.nextInt());
+        sc.nextLine();
+        System.out.print("nuevo docente: ");
+
+        a.setDocente(sc.nextLine());
+        System.out.println("Asignatura actualizada.");
+        } else { System.out.println("Asignatura no encontrada.");
+        } 
     }
 
 }
