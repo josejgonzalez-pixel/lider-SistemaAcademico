@@ -16,8 +16,8 @@ public class SistemaAcademico {
     /**
      * @param args the command line arguments
      */
-    static ArrayList<estudiante> estudiantes = new ArrayList<>();
-    
+   
+    static ArrayList<Asignatura> asignaturas = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -29,48 +29,60 @@ public class SistemaAcademico {
         int opcion;
         do {
             System.out.println("\n===== SISTEMA ACADEMICO =====");
-            System.out.println("1. Registrar Estudiante");
-            System.out.println("2. Listar Estudiantes");
-            System.out.println("3. Buscar Estudiante");
-            System.out.println("4. Actualizar Estudiante");
-            System.out.println("5. Eliminar Estudiante");
+            System.out.println("1. Registrar asignatura");
+            System.out.println("2. Listar asignatura");
+            System.out.println("3. Buscar asignatura ");
+            System.out.println("4. Actualizar asignatura");
+            System.out.println("5. Eliminar asignatura");
             System.out.println("0. Salir");
-            System.out.print("Seleccione1 una opcion: ");
+            System.out.print("Seleccione una opcion: ");
             opcion = sc.nextInt();
             sc.nextLine();
 
             switch (opcion) {
                 case 1 ->
-                    registrarEstudiante();
+                    registrarAsignatura();
                 /*case 2 ->
-                    listarEstudiantes();
+                   listarAsignaturas();
                 case 3 ->
-                    buscarEstudiante();
+                    buscarAsignatura();
                 case 4 ->
-                    actualizarEstudiante();
+                    actualizarAsignatura();
                 case 5 ->
-                    eliminarEstudiante();*/
+                    eliminarAsignatura();*/
                 case 0 ->
                     System.out.println("Saliendo");
                 default ->
                     System.out.println("Opcion invalida.");
             }
         } while (opcion != 0);
-        
+  
     }
-    
-    public static void registrarEstudiante() {
+    public static void registrarAsignatura() { 
         System.out.print("codigo: ");
-        String codigo = sc.nextLine(); 
+        String codigo = sc.nextLine();
         System.out.print("nombre: ");
         String nombre = sc.nextLine();
-        System.out.print("apellido: "); 
-        String apellido = sc.nextLine(); 
-        System.out.print("edad: ");
-        int edad = sc.nextInt();
+        System.out.print("creditos: ");
+        int creditos = sc.nextInt();
         sc.nextLine();
-        estudiantes.add(new estudiante(codigo, nombre, apellido, edad));
-        System.out.println("Estudiante registrado."); }
+        System.out.print("docente: ");
+        String docente = sc.nextLine();
+        asignaturas.add(new Asignatura(codigo, nombre, creditos, docente));
+        System.out.println("asignatura registrada."); }
+
+    private static class Asignatura {
+
+        public Asignatura(String codigo, String nombre, int creditos, String docente) {
+        }
+    }
+    
+    
+    
+    
+    
+   
+ 
 }
 
         
