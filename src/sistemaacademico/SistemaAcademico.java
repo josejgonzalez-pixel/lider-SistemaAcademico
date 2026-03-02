@@ -16,7 +16,6 @@ public class SistemaAcademico {
     /**
      * @param args the command line arguments
      */
-   
     static ArrayList<Asignatura> asignaturas = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
@@ -42,11 +41,11 @@ public class SistemaAcademico {
             switch (opcion) {
                 case 1 ->
                     registrarAsignatura();
-                /*case 2 ->
-                   listarAsignaturas();
+                case 2 ->
+                    listarAsignaturas();
                 case 3 ->
                     buscarAsignatura();
-                case 4 ->
+                /*case 4 ->
                     actualizarAsignatura();
                 case 5 ->
                     eliminarAsignatura();*/
@@ -56,9 +55,10 @@ public class SistemaAcademico {
                     System.out.println("Opcion invalida.");
             }
         } while (opcion != 0);
-  
+
     }
-    public static void registrarAsignatura() { 
+
+    public static void registrarAsignatura() {
         System.out.print("codigo: ");
         String codigo = sc.nextLine();
         System.out.print("nombre: ");
@@ -69,22 +69,45 @@ public class SistemaAcademico {
         System.out.print("docente: ");
         String docente = sc.nextLine();
         asignaturas.add(new Asignatura(codigo, nombre, creditos, docente));
-        System.out.println("asignatura registrada."); }
+        System.out.println("asignatura registrada.");
+    }
 
     private static class Asignatura {
 
         public Asignatura(String codigo, String nombre, int creditos, String docente) {
         }
-    }
-    
-    
-    
-    
-    
-   
- 
-}
 
+        private Object getCodigo() {
+            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        }
+    }
+
+    public static void listarAsignaturas() {
+        if (asignaturas.isEmpty()) {
+            System.out.println("No hay asignaturas registradas.");
+        } else {
+            asignaturas.forEach(System.out::println);
+        }
+    }
+
+    
+    private static Asignatura buscarAsignatura(String codigo) {
+        for (Asignatura a : asignaturas) {
+            if (a.getCodigo().equals(codigo)) {
+                return a;
+            }
+        }
+        return null;
+    }
+
+    public static void buscarAsignatura() {
+        System.out.print("Ingrese codigo: ");
+        String codigo = sc.nextLine();
+        Asignatura a = buscarAsignatura(codigo);
+        System.out.println(a != null ? a : "asignatura no encontrada.");
+    }
+
+}
         
     
     
