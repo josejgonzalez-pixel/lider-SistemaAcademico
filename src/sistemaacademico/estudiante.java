@@ -18,6 +18,10 @@ public class estudiante {
     public estudiante() {
     }
 
+    estudiante(String codigo, String nombre, String apellido, int edad) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     
     public String getCodigo() {
         return codigo;
@@ -63,6 +67,8 @@ public class estudiante {
     public String toString() {
         return "estudiante{" + "codigo=" + codigo + ", nombre=" + nombre + ", apellido=" + apellido + ", edad=" + edad + ", semestre=" + semestre + '}';
     }
+    
+    
     
     
      
