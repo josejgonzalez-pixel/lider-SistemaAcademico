@@ -44,5 +44,8 @@ public class Asignatura {
         this.creditos = creditos;
     }
     
-    
+     @Override
+    public String toString() {
+        return "Asignatura{" + "codigo=" + codigo + ", nombre=" + nombre + ", creditos=" + creditos + '}';
+    }
 }
