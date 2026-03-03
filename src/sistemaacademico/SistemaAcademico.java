@@ -191,8 +191,19 @@ public class SistemaAcademico {
 
         System.out.println("Nota no encontrada.");
     }
-}
-        
     
-    
+    public static void eliminarNota() {
+        System.out.print("Codigo estudiante: ");
+        String codigo = sc.nextLine();
 
+        for (Nota n : notas) {
+            if (n.getCodigoEstudiante().equals(codigo)) {
+                notas.remove(n);
+                System.out.println("Nota eliminada.");
+                return;
+            }
+        }
+
+        System.out.println("Nota no encontrada.");
+    }
+}
