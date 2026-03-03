@@ -17,6 +17,7 @@ public class SistemaAcademico {
      * @param args the command line arguments
      */
     static ArrayList<Asignatura> asignaturas = new ArrayList<>();
+    static ArrayList<Nota> notas = new ArrayList<>();
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -127,6 +128,23 @@ public class SistemaAcademico {
         }
     }
 
+    //Metodos Nota
+    public static void registrarNota() {
+        System.out.print("Codigo estudiante: ");
+        String codEst = sc.nextLine();
+
+        System.out.print("Codigo asignatura: ");
+        String codAsig = sc.nextLine();
+
+        System.out.print("Valor nota: ");
+        double valor = sc.nextDouble();
+        sc.nextLine();
+
+        Nota nueva = new Nota(codEst, codAsig, valor);
+        notas.add(nueva);
+
+        System.out.println("Nota registrada correctamente.");
+}
 }
         
     
