@@ -169,8 +169,29 @@ public class SistemaAcademico {
         }
 
         System.out.println("Nota no encontrada.");
-        }
     }
+    
+    public static void actualizarNota() {
+        System.out.print("Codigo estudiante: ");
+        String codigo = sc.nextLine();
+
+        for (Nota n : notas) {
+            if (n.getCodigoEstudiante().equals(codigo)) {
+
+                System.out.print("Nuevo valor: ");
+                double nuevoValor = sc.nextDouble();
+                sc.nextLine();
+
+                n.setValor(nuevoValor);
+
+                System.out.println("Nota actualizada.");
+                return;
+            }
+        }
+
+        System.out.println("Nota no encontrada.");
+    }
+}
         
     
     
