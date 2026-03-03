@@ -44,6 +44,8 @@ public class Nota {
         this.valor = valor;
     }
     
-    
-    
+     @Override
+    public String toString() {
+        return "Nota{" + "codigoEstudiante=" + codigoEstudiante + ", codigoAsignatura=" + codigoAsignatura + ", valor=" + valor + '}';
+    }
 }
