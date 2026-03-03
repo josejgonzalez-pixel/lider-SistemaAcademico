@@ -8,21 +8,21 @@ package sistemaacademico;
  *
  * @author hp
  */
-public class estudiante {
+public class Estudiante {
     private String codigo;
     private String nombre;
     private String apellido;
     private int edad; 
     private int semestre;
 
-    public estudiante() {
+    public Estudiante(String codigo, String nombre, String apellido, int edad, int semestre) {
+        this.codigo = codigo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+        this.semestre = semestre;
     }
-
-    estudiante(String codigo, String nombre, String apellido, int edad) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    
+   
     public String getCodigo() {
         return codigo;
     }

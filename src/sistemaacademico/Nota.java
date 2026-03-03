@@ -24,16 +24,8 @@ public class Nota {
         return codigoEstudiante;
     }
 
-    public void setCodigoEstudiante(String codigoEstudiante) {
-        this.codigoEstudiante = codigoEstudiante;
-    }
-
     public String getCodigoAsignatura() {
         return codigoAsignatura;
-    }
-
-    public void setCodigoAsignatura(String codigoAsignatura) {
-        this.codigoAsignatura = codigoAsignatura;
     }
 
     public double getValor() {
@@ -43,9 +35,13 @@ public class Nota {
     public void setValor(double valor) {
         this.valor = valor;
     }
-    
-     @Override
+
+    @Override
     public String toString() {
-        return "Nota{" + "codigoEstudiante=" + codigoEstudiante + ", codigoAsignatura=" + codigoAsignatura + ", valor=" + valor + '}';
+        return "Nota{" +
+                "codigoEstudiante='" + codigoEstudiante + '\'' +
+                ", codigoAsignatura='" + codigoAsignatura + '\'' +
+                ", valor=" + valor +
+                '}';
     }
 }

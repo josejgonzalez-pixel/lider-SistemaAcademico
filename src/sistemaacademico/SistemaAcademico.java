@@ -72,34 +72,6 @@ public class SistemaAcademico {
         System.out.println("asignatura registrada");
     }
 
-    private static class Asignatura {
-
-        public Asignatura(String codigo, String nombre, int creditos, String docente) {
-        }
-
-        private Object getCodigo() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public void setNombre() {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public void setCreditos(int nextInt) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public void setDocente(String nextLine) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-        public void setNombre(String nextLine) {
-            throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-        }
-
-
-
-    }
 
     public static void listarAsignaturas() {
         if (asignaturas.isEmpty()) {
